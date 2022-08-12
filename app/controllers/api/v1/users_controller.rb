@@ -17,6 +17,7 @@ class Api::V1::UsersController < ApplicationController
     end
     def addUser
         user = User.new(userparams)
+        user.type = 2
         # user = User.new(username: params[:username], email: params[:email], password_digest: params[:password])
         if user.save()
             render json:user, status: :ok
